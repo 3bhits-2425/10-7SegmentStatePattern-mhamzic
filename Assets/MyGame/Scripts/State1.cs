@@ -25,6 +25,7 @@ public class State1 : ISevenSegmentDisplayState
 
     public ISevenSegmentDisplayState CountDown()
     {
+        // vor Singleton: return new State0();
         return State0.GetState();
     }
 
