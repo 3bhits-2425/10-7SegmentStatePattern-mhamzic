@@ -7,6 +7,7 @@ public class SevenSegmentDisplay : MonoBehaviour
     [SerializeField] private float retractedYPosition = 0f;
     [SerializeField] private float rotationSpeed = 200f;
 
+
     private SegmentMover[] segments;
 
     public bool allOn = false;
@@ -30,6 +31,26 @@ public class SevenSegmentDisplay : MonoBehaviour
         { true,  true,  true,  true,  true,  true,  true  }, // 8 
         { true,  true,  true,  false, false, true,  true  }  // 9
     };
+
+    private ISevenSegmentDisplayState mySevenSegmentDisplayState;
+    //State0.GetState();
+
+    public ISevenSegmentDisplayState GetState()
+    {
+        return mySevenSegmentDisplayState; 
+    }
+
+    public bool SetState(ISevenSegmentDisplayState newState)
+    {
+        mySevenSegmentDisplayState = newState;
+        return true; 
+    }
+
+    //zh machen
+    public bool UpdateDisplay()
+    {
+        return true;
+    }
 
     private void Awake()
     {
