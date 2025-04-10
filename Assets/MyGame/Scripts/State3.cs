@@ -1,6 +1,21 @@
 public class State3 : ISevenSegmentDisplayState
 {
+    private static ISevenSegmentDisplayState _state;
+    private State3()
+    {
 
+    }
+
+    // static Methode 
+    public static ISevenSegmentDisplayState GetState()
+    {
+        if (_state == null)
+        {
+            _state = new State3();
+        }
+
+        return _state;
+    }
     public int GetDigit()
     {
         return 3;
@@ -8,11 +23,11 @@ public class State3 : ISevenSegmentDisplayState
 
     public ISevenSegmentDisplayState CountDown()
     {
-        return new State2();
+        return State2.GetState();
     }
 
     public ISevenSegmentDisplayState CountUp()
     {
-        return new State4();
+        return State4.GetState();
     }
 }

@@ -34,7 +34,7 @@ public class Manager : MonoBehaviour
         myUIManager.SetDisplay(myDigit);
         myDigit.ResetSegmentDisplay();
 
-        myDisplayState = new State0();
+        myDisplayState = State0.GetState();
     }
 
     private void Update()
